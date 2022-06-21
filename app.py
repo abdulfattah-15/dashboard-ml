@@ -2,7 +2,8 @@
 # coding: utf-8
 # In[25]:
 import pandas as pd
-import flask 
+from flask import Flask
+import flask
 import pickle
 
 # Use pickle to load in the pre-trained model.
