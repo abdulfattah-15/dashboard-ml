@@ -34,7 +34,8 @@ def index():
                                                      'Humidity':Humidity},
                                      result=prediction,
                                      )
-app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
 
 # In[ ]:
 
