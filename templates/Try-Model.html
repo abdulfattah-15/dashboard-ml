@@ -3,15 +3,16 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="Try Our Model">
     <meta name="description" content="">
     <title>Try Model</title>
-    <link rel="stylesheet" href={{ url_for('static', filename='nicepage.css') }} media="screen">
+    <link rel="stylesheet" href={{ url_for('static', filename="nicepage.css") }} media="screen">
 <link rel="stylesheet" href={{ url_for('static', filename="Try-Model.css") }} media="screen">
     <script class="u-script" type="text/javascript" src={{ url_for('static', filename="jquery.js") }} defer=""></script>
     <script class="u-script" type="text/javascript" src={{ url_for('static', filename="nicepage.js") }} defer=""></script>
     <meta name="generator" content="Nicepage 4.12.21, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
     
     
     <script type="application/ld+json">{
@@ -58,9 +59,17 @@
           </div>
         </nav>
       </div></header>
-    <section class="u-clearfix u-palette-3-base u-section-1" id="sec-2f83">
-      <div class="u-clearfix u-sheet u-valign-top u-sheet-1">
-        <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
+    <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="1200" data-image-height="1233" id="sec-8234">
+      <div class="u-align-center u-container-style u-expanded-width u-group u-opacity u-opacity-60 u-palette-1-base u-shape-rectangle u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <h1 class="u-text u-text-default u-title u-text-1">Try Our Model</h1>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-palette-1-dark-2 u-section-2" id="sec-2f83">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Masukkan data suhu dan curah hujan untuk memprediksi total daya pemakaian listrik dengan model machine learning kami</p>
+        <div class="u-clearfix u-custom-html u-expanded-width u-palette-4-dark-2 u-custom-html-1">
           <style> form {
     margin: auto;
     width: 35%;
@@ -74,11 +83,11 @@
           <form action="{{ url_for('index') }}" method="POST">
             <fieldset>
               <legend>Input values:</legend>
-              <div style="display: inline-block; width: 150px;"> Temperature:</div>
+              <div style="display: inline-block; width: 150px;"> Temperature (C):</div>
               <input name="temperature" type="number" required="">
               <br>
               <br>
-              <div style="display: inline-block; width: 150px;"> Humidity:</div>
+              <div style="display: inline-block; width: 150px;"> Curah Hujan (mm):</div>
               <input name="humidity" type="number" required="">
               <br>
               <br>
@@ -89,9 +98,12 @@
             <input type="hidden" value="" name="recaptchaResponse">
           </form>
           <br>
-          <div class="result" align="center"> {% if result %}
-        {% for variable, value in original_input.items() %} <b>{{ variable }}</b> : {{ value }}
-        {% endfor %} <br>
+          <div class="result" align="center"> 
+          {% if result %}
+            {% for variable, value in original_input.items() %} 
+                 <b>{{ variable }}</b> : {{ value }}
+            {% endfor %} 
+            <br>
             <br> Predicted energy consumption: <p style="font-size:50px">{{ result }}</p> {% endif %} 
           </div>
         </div>
