@@ -32,7 +32,7 @@ def index():
         prediction = model.predict(input_variables)[0]
         return flask.render_template('Try-Model.html',
                                      original_input={'Temperature':Temperature,
-                                                     'Humidity':Humidity},
+                                                     'Curah Hujan':Humidity},
                                      result=prediction,
                                      )
 if __name__ == '__main__':
