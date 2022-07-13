@@ -19,6 +19,9 @@ def main2():
 @app.route('/Machine-Learning.html')
 def machine():
     return(flask.render_template('Machine-Learning.html'))
+@app.route('/loaderio-8b81e8d43398dc2ff5f761cc795d6de7.txt')
+def loaderio():
+    return(flask.render_template('loaderio-8b81e8d43398dc2ff5f761cc795d6de7.txt'))
 @app.route('/Try-Model.html', methods=['GET', 'POST'])
 def index():
     if flask.request.method == 'GET':
